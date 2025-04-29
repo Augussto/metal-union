@@ -600,8 +600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eabc5d25ec1db246869e3aa7e07cd90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followPlayer: 0
+  followPlayer: 1
   targetPos: {x: 0, y: 0, z: 0}
+  cameraY: 1
 --- !u!1 &522698074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,6 +1453,7 @@ MonoBehaviour:
   colliderPos: {fileID: 320974795}
   detectEnemy: {fileID: 320974797}
   dagger: {fileID: 6474164431691162017, guid: b4607a50a1284614fbd6f406fb21d518, type: 3}
+  attack1Delay: 0.2
 --- !u!114 &921931597
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public DetectEnemy detectEnemy;
     private PlayerMetal metal;
     public GameObject dagger;
+    [SerializeField] float attack1Delay;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine(Attack01());
             if (detectEnemy.enemyInRange)
             {
-                detectEnemy.enemy.GetComponent<BasicEnemyController>().GetHit(damage);
+                StartCoroutine(DamageEnemyAttack01());
                 metal.ChargeMetal();
             }
         }
@@ -52,6 +53,11 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = true;
         yield return new WaitForSeconds(0.5f);
         isAttacking = false;
+    }
+    IEnumerator DamageEnemyAttack01()
+    {
+        yield return new WaitForSeconds(attack1Delay);
+        detectEnemy.enemy.GetComponent<BasicEnemyController>().GetHit(damage);
     }
     IEnumerator Attack02()
     {
